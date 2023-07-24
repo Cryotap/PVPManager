@@ -71,10 +71,6 @@ class Main extends PluginBase implements Listener {
     public function onDisable(): void {
         $this->getLogger()->info(TF::RED . "PvPAdminCommands disabled!");
     }
-	
-	private function getPlayerLastJoinTime(Player $player): int {
-        return $this->lastJoinTimes[strtolower($player->getName())] ?? 0;
-    }
 
     public function onEntityDamage(EntityDamageEvent $event): void {
     $entity = $event->getEntity();
@@ -93,7 +89,7 @@ class Main extends PluginBase implements Listener {
 					$player->sendMessage(TF::RED . "PVP is disabled on this world.");
 					$event->cancel(true);
 						} else {
-							$event->cancel();
+							$event->cancel(true);
 						}
 					} 
 				} else {
@@ -128,7 +124,7 @@ public function onEmpty(PlayerBucketEmptyEvent $event) {
 	$noPVP = $this->getConfig()->get("pvp_disabled_worlds", []);
         if ($this->allowLiquid === false && !in_array($player->getWorld()->getFolderName(), $noPVP)) {
                 $player->sendMessage(TF::RED . "Placing Liquid/Lava is disabled here.");
-                $event->cancel(); // Cancel the event to prevent the lava from being placed.
+                $event->cancel(true); // Cancel the event to prevent the lava from being placed.
 				return true;
 		} 
 }
@@ -178,7 +174,7 @@ public function onEmpty(PlayerBucketEmptyEvent $event) {
 
         if ($args[0] === "editor") {
             if (!$sender->hasPermission("pvp.editor")) {
-                $sender->sendMessage("You don't have permission to use the PvP editor.");
+                $sender->sendMessage(TF::RED . "You don't have permission to use the PvP editor.");
                 return true;
             }
 			$this->getConfig()->reload();
@@ -241,10 +237,6 @@ private function toggleConfigSetting(string $configKey, string $displayName): vo
     $this->saveConfig();
 	$this->loadConfigValues();
     $status = $newValue ? "enabled" : "disabled";
-    $this->getServer()->broadcastMessage(TF::PURPLE . "$displayName is now $status.");
+    $this->getServer()->broadcastMessage(TF::DARK_PURPLE . "$displayName is now $status.");
 }
-
-    private function isInCombat(string $playerName): bool {
-        return isset($this->inCombat[$playerName]) && time() < $this->inCombat[$playerName];
-    }
 }
