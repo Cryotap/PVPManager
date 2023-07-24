@@ -94,7 +94,6 @@ class Main extends PluginBase implements Listener {
 				} else {
 					// Update the combat timer for the player
 					$this->inCombat[$playerName] = time() + $this->combatTimeout;
-					$player->sendMessage($this->combatTimeout);
 				}
 			}
 		}
@@ -131,7 +130,6 @@ public function onEmpty(PlayerBucketEmptyEvent $event) {
 	public function onItemConsume(PlayerItemConsumeEvent $event): void {
     $player = $event->getPlayer();
     $item = $event->getItem();
-	var_dump($item->getName());
     // Check if the consumed item is soup
     if ($item->getName() === "Mushroom Stew") {
 		if ($this->allowSoupHeal == true) {
