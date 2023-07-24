@@ -1,0 +1,9 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Cryotap/PVPManager
+build-by-default: true
+branches:
+- main
+projects:
+  PVPManager:
+    path: ""
+    icon: "PVPM.gif"
+...
