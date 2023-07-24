@@ -4,8 +4,6 @@ api: [5.0.0]
 main: Cryotap\PVPManager\Main
 author: Cryotap
 description: PvP Admin Commands plugin for managing PvP features.
-depend:
-- FormAPI
 
 commands:
   pvpm:
