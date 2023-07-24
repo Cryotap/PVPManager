@@ -36,7 +36,6 @@ class Main extends PluginBase implements Listener {
     public $inCombat = [];
 	private $combatTimeout = 10;
     private $allowUseBed = true; // Default value, can be changed in config
-	private $lastJoinTimes = true;
     private $allowFlying = true; // Default value, can be changed in config
     private $allowPVP = true; // Default value, can be changed in config
 	private $allowSoupHeal = true; // Default value, can be changed in config
@@ -87,9 +86,9 @@ class Main extends PluginBase implements Listener {
 						$target = $event->getDamager();
 						if ($target instanceof Player) {
 					$player->sendMessage(TF::RED . "PVP is disabled on this world.");
-					$event->cancel(true);
+					$event->cancel();
 						} else {
-							$event->cancel(true);
+							$event->cancel();
 						}
 					} 
 				} else {
@@ -108,10 +107,10 @@ class Main extends PluginBase implements Listener {
 				$noPVP = $this->getConfig()->get("pvp_disabled_worlds", []);
 				if (!in_array($player->getWorld()->getFolderName(), $noPVP)) {
 				// Cancel the bed enter event if using a bed is not allowed
-				$event->cancel(true);
+				$event->cancel();
 				$player->sendMessage(TF::RED . "Using a bed is currently disabled while logged.");
 				} else {
-					$event->cancel(true);
+					$event->cancel();
 					$player->sendMessage(TF::RED . "Using a bed is currently disabled while logged.");
 				}
 			}
@@ -124,7 +123,7 @@ public function onEmpty(PlayerBucketEmptyEvent $event) {
 	$noPVP = $this->getConfig()->get("pvp_disabled_worlds", []);
         if ($this->allowLiquid === false && !in_array($player->getWorld()->getFolderName(), $noPVP)) {
                 $player->sendMessage(TF::RED . "Placing Liquid/Lava is disabled here.");
-                $event->cancel(true); // Cancel the event to prevent the lava from being placed.
+                $event->cancel(); // Cancel the event to prevent the lava from being placed.
 				return true;
 		} 
 }
@@ -153,7 +152,7 @@ public function onEmpty(PlayerBucketEmptyEvent $event) {
 				$noPVP = $this->getConfig()->get("pvp_disabled_worlds", []);
 				if (!in_array($player->getWorld()->getFolderName(), $noPVP)) {
 				// Cancel the flight event if flying is not allowed
-				$event->cancel(true);
+				$event->cancel();
 				$player->sendMessage(TF::RED . "Flying is currently disabled while logged.");
 				}
 			}
