@@ -1,0 +1,13 @@
+# Disable using beds while logged, limited to PVP worlds.
+allow_use_bed: false
+# Disable flying while logged, limited to PVP worlds.
+allow_flying: false
+# Disable PVP in select worlds.
+allow_pvp: false
+# Enable full feal with soup, limited to PVP worlds.
+allow_soup_heal: true
+# Disable Lava, limited to PVP worlds.
+allow_liquid: false
+# The worlds where pvp is disabled
+pvp_disabled_worlds:
+    - noPVP
