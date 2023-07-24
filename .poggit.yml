@@ -6,4 +6,7 @@ projects:
   PVPManager:
     path: ""
     icon: "PVPM.gif"
+    libs:
+      - src: Vecnavium/FormsUI/FormsUI
+        version: ^1.1.3
 ...
