@@ -85,7 +85,7 @@ class Main extends PluginBase implements Listener {
 					if (in_array($player->getWorld()->getFolderName(), $noPVP)) {
 						$target = $event->getDamager();
 						if ($target instanceof Player) {
-					$player->sendMessage(TF::RED . "PVP is disabled on this world.");
+					$target->sendMessage(TF::RED . "PVP is disabled on this world.");
 					$event->cancel();
 						} else {
 							$event->cancel();
