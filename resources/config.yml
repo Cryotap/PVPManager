@@ -4,8 +4,20 @@ allow_use_bed: false
 allow_flying: false
 # Disable PVP in select worlds.
 allow_pvp: false
+# Allow Custom Base Damage
+allow_custom_base_damage: true
+# Base damage
+custom_base_damage: 2.0
+# Allow Custom Health
+allow_custom_health: true
+# Custom Health
+custom_health: 30
 # Enable full feal with soup, limited to PVP worlds.
 allow_soup_heal: true
+# Soup Heal Amount
+soup_heal: 6
+# Allow Exhaustion
+allow_exhaust: true
 # Disable Lava, limited to PVP worlds.
 allow_liquid: false
 # The worlds where pvp is disabled

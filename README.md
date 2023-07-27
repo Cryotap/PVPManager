@@ -19,18 +19,19 @@ To even use the command you need pvp.logger
 
 - Allow PVP setting: You can toggle if pvp is enabled.
 
+- Set custom healing amount (keep it within the max health)
+
+- Allow Exhaustion Setting
+
+- Allow custom base damage Setting
+
+- Set custom base damage
+
+- Allow custom health Setting
+
+- Set custom health
+
 - None PVP Worlds: List the worlds you want to disable pvp on if the PVP setting is false.
-
-## To Do
-- Clean the code
-
-- Custom Damage (PVP worlds only)
-
-- Custom Health (PVP worlds only)
-
-- Hunger restore (PVP worlds only)
-
-- More
 
 ## Credits
 Creator: Cryotap
