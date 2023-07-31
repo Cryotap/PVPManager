@@ -1,6 +1,10 @@
 # General
 Manage pvp on your server!
 
+[![](https://poggit.pmmp.io/shield.state/PVPManager)](https://poggit.pmmp.io/p/PVPManager)
+
+[![](https://poggit.pmmp.io/shield.api/PVPManager)](https://poggit.pmmp.io/p/PVPManager)
+
 ## Commands | Perms
 To even use the command you need pvp.logger
 
