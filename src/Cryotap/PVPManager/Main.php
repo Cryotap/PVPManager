@@ -216,7 +216,7 @@ public function onEmpty(PlayerBucketEmptyEvent $event) {
         }
 
         if ($args[0] === "editor") {
-            if (!$sender->hasPermission("pvp.editor")) {
+            if (!$sender->hasPermission("pvpmanager.editor")) {
                 $sender->sendMessage(TF::RED . "You don't have permission to use the PvP editor.");
                 return true;
             }

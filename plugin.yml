@@ -9,9 +9,12 @@ commands:
   pvpm:
     description: PvP Management
     usage: /pvpm editor
-    permission: pvp.logger
+    permission: pvpmanager.logger
 
 permissions:
-  pvp.logger:
+  pvpmanager.logger:
+    default: op
+    description: Allows access to PvP admin commands.
+  pvpmanager.editor:
     default: op
     description: Allows access to PvP admin commands.
